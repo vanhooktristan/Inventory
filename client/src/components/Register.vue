@@ -2,7 +2,7 @@
   <v-layout row wrap>
     <v-flex xs4 offset-xs4>
       <div class="white elevation-2">
-        <v-toolbar flat dense class="black" dark>
+        <v-toolbar flat dense dark>
           <v-spacer></v-spacer>
           <v-toolbar-title>Register</v-toolbar-title>
           <v-spacer></v-spacer>
