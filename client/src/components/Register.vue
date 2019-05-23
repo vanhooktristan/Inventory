@@ -14,7 +14,6 @@
             label="Email"
             v-model="email"
           ></v-text-field>
-          <br>
           <v-text-field
             label="Password"
             v-model="password"
