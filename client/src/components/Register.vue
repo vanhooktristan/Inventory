@@ -1,28 +1,35 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Register</h2>
+  <v-layout row wrap>
+    <v-flex xs4 offset-xs4>
+      <div class="white elevation-2">
+        <v-toolbar flat dense class="cyan" dark>
+          <v-spacer></v-spacer>
+          <v-toolbar-title>Register</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
 
-    <input
-        type="email"
-        name="email"
-        v-model="email"
-        placeholder="email" />
-    <br>
-    <input
-        type="password"
-        name="password"
-        v-model="passord"
-        placeholder="password" />
-    <br>
-    <br>
-    <div class="error" v-html="error" />
-    <br>
-    <button
-      @click="register">
-      Register
-    </button>
-  </div>
+        <div class="pl-4 lr-4 pt-2 pb-2">
+        <v-flex xs8 offset-xs2>
+          <v-text-field
+            label="Email"
+            v-model="email"
+          ></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            v-model="password"
+          ></v-text-field>
+        </v-flex>
+        <br>
+        <div class="error" v-html="error" />
+        <v-btn class="cyan"
+         @click="register">
+          Register
+        </v-btn>
+        </div>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -50,22 +57,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style>
 .error {
   color: red;
 }
