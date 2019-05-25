@@ -25,12 +25,13 @@ module.exports = {
     async login (req, res) {
         try {
             const {email, password} = req.body
+            console.log(email, password)
             const user = await User.findOne({
                 where: {
                     email: email
                 }
             })
-
+            console.log(user)
             if (!user) {
                 res.status(403).send({
                     error: 'The login information was incorrect'
@@ -48,6 +49,7 @@ module.exports = {
                 user: userJson,
                 token: jwtSignUser(userJson)
             })
+            console.log(userJson)
         } catch (err) {
             res.status(500).send({
                 error: 'An error has occured trying to log in.'

@@ -22,7 +22,7 @@
         </v-btn>
         <v-btn flat dark>
             <router-link to="register">
-                Sign-In
+                Sign Up
             </router-link>
         </v-btn>
     </v-toolbar-items>
