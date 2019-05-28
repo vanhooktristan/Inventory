@@ -1,14 +1,4 @@
 const {User} = require('../models')
-const jwt = require('jsonwebtoken')
-const config = require('../config/config')
-
-function jwtSignUser (user) {
-    const ONE_WEEK = 60 * 60 * 24 * 7
-    return jwt.sign(user, config.authentication.jwtSecret, {
-        expiresin: ONE_WEEK
-    })
-}
-
 
 module.exports = {
     async register (req, res) {
@@ -31,7 +21,6 @@ module.exports = {
                     email: email
                 }
             })
-            console.log(user)
             if (!user) {
                 res.status(403).send({
                     error: 'The login information was incorrect'
@@ -39,17 +28,14 @@ module.exports = {
             }
 
             const isPasswordValid = password === user.password
+
+            console.log(isPasswordValid)
             if (!isPasswordValid) {
                 return res.status(403).send({
                     error: 'The login information was incorrect'
                 })
             }
-            const userJson = user.toJSON()
-            res.send({
-                user: userJson,
-                token: jwtSignUser(userJson)
-            })
-            console.log(userJson)
+            res.send(User.toJson())
         } catch (err) {
             res.status(500).send({
                 error: 'An error has occured trying to log in.'

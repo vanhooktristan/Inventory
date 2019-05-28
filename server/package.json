@@ -18,7 +18,8 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
     "sequelize": "^5.8.6",
-    "sqlite3": "^4.0.8"
+    "sqlite3": "^4.0.8",
+    "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
     "eslint": "5.16.0",
