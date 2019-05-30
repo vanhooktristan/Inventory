@@ -1,5 +1,16 @@
 <template>
   <v-toolbar fixed dark class="red darken-4">
+    <v-toolbar-title class="mr-4">
+      <span
+        class="home"
+        @click="navigateTo({name: 'Home'})">
+        Heartland Macs
+      </span>
+    </v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn icon>
+      <v-icon>search</v-icon>
+    </v-btn>
     <v-menu :nudge-width="100">
         <template v-slot:activator="{ on }">
           <v-toolbar-title v-on="on">
@@ -7,7 +18,7 @@
           </v-toolbar-title>
         </template>
 
-        <v-list>
+        <v-list class="menu-list">
           <v-list-tile>
             <v-list-tile-title>
               <router-link class="router-link" to="register">
@@ -15,36 +26,22 @@
               </router-link>
             </v-list-tile-title>
           </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-title>
+              <router-link class="router-link" to="login">
+                Login
+              </router-link>
+            </v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-title>
+              <router-link class="router-link" to="InventoryMain">
+                Inventory
+              </router-link>
+            </v-list-tile-title>
+          </v-list-tile>
         </v-list>
     </v-menu>
-    <v-toolbar-title class="mr-4">
-        <span
-            class="home"
-            @click="navigateTo({name: 'Home'})">
-            HeartlandMacs
-        </span>
-    </v-toolbar-title>
-
-    <v-toolbar-items>
-        <v-btn flat dark>
-            <router-link class="router-link" to="InventoryMain">
-                Inventory
-            </router-link>
-        </v-btn>
-    </v-toolbar-items>
-    <v-spacer></v-spacer>
-    <v-toolbar-items>
-        <v-btn flat dark>
-            <router-link class="router-link" to="login">
-                Login
-            </router-link>
-        </v-btn>
-        <v-btn flat dark>
-            <router-link class="router-link" to="register">
-                Sign Up
-            </router-link>
-        </v-btn>
-    </v-toolbar-items>
   </v-toolbar>
 </template>
 
@@ -65,10 +62,11 @@ export default {
 
 .router-link {
     color: black;
-    underline: none;
+    text-decoration: none;
 }
 
 .home:hover {
     color: black;
 }
+
 </style>

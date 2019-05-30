@@ -1,17 +1,24 @@
 <template>
   <v-layout>
-    <v-flex xs2 offset-xs3>
-      <v-btn block color="secondary" dark>Inventory List</v-btn>
-      <v-btn block color="secondary" dark>Customers</v-btn>
-      <v-btn fab dark color="red darken-4">
-        <v-icon>+</v-icon>
+    <v-flex></v-flex>
+    <v-flex xs4>
+      <v-btn class="bigButton" block color="secondary" dark>Inventory List</v-btn>
+      <br>
+      <v-btn class="bigButton" block color="secondary" dark>Customers</v-btn>
+      <br>
+      <v-btn class="bigButton" block color="secondary" dark>For Sale</v-btn>
+    </v-flex>
+    <v-flex></v-flex>
+    <v-flex xs4>
+      <v-btn class="bigButton" block color="secondary" dark>Check-In</v-btn>
+      <br>
+      <v-btn class="bigButton" block color="secondary" dark>Check-Out</v-btn>
+      <br>
+      <v-btn class="addButton" fab dark color="red darken-4">
+        +
       </v-btn>
     </v-flex>
-    <v-flex xs1></v-flex>
-    <v-flex xs2>
-      <v-btn block color="secondary" dark>Check-In</v-btn>
-      <v-btn block color="secondary" dark>Check-Out</v-btn>
-    </v-flex>
+    <v-flex></v-flex>
   </v-layout>
 </template>
 
@@ -42,5 +49,16 @@ li {
 }
 a {
   color: #42b983;
+}
+.addButton {
+  font-size: 30px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.bigButton {
+  height: 100px;
+  font-size: 2vw;
 }
 </style>
