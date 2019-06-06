@@ -4,7 +4,7 @@
       <page-header />
 
       <main>
-        <v-container fluid>
+        <v-container class="bodyContainer" fluid>
           <router-view></router-view>
         </v-container>
       </main>

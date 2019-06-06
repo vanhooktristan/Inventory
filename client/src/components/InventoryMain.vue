@@ -1,5 +1,5 @@
 <template>
-  <v-layout>
+  <v-layout class='bodyContatiner'>
     <v-flex></v-flex>
     <v-flex xs4>
       <v-btn class="bigButton" block color="secondary" dark>Inventory List</v-btn>
@@ -23,11 +23,13 @@
 </template>
 
 <script>
+import backgroundImage from '@/assets/background.jpg'
 import image from '@/assets/heartlandmacslogo.jpg'
 export default {
   name: 'InventoryMain',
   data () {
     return {
+      backgroundImage: backgroundImage,
       image: image
     }
   }
@@ -60,5 +62,9 @@ a {
 .bigButton {
   height: 100px;
   font-size: 2vw;
+}
+
+.bodyContainer {
+  background-image: backgroundImage;
 }
 </style>
